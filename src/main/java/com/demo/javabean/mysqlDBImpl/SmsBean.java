@@ -1,5 +1,7 @@
 package com.demo.javabean.mysqlDBImpl;
 
+import com.demo.javabean.SmsDAO;
+
 import javax.servlet.http.HttpServletRequest;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -7,7 +9,7 @@ import java.util.Date;
 import java.util.Hashtable;
 import java.util.List;
 
-public class SmsBean {
+public class SmsBean implements SmsDAO {
 	/**
 	 * (1)列表函数
 	 * @param request

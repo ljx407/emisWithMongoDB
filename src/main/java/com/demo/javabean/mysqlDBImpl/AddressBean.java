@@ -16,7 +16,6 @@ public class AddressBean implements AddressDAO{
 	 * @param strPageNo
 	 * @return
 	 */
-	@Override
 	public boolean list(HttpServletRequest request, String username, String strPageSize,
 			String strPageNo) {
 		// 创建数据库连接
@@ -91,7 +90,6 @@ public class AddressBean implements AddressDAO{
 	 * @param username
 	 * @return
 	 */
-	@Override
 	public boolean delete(HttpServletRequest request, String username) {
 		// 创建数据库连接
 		DBAccess db = new DBAccess();
@@ -113,7 +111,6 @@ public class AddressBean implements AddressDAO{
 	 * @param username
 	 * @return
 	 */
-	@Override
 	public boolean insert(HttpServletRequest request, String username) {
 		// 创建数据库连接
 		DBAccess db = new DBAccess();
@@ -156,7 +153,6 @@ public class AddressBean implements AddressDAO{
 	 * @param username
 	 * @return
 	 */
-	@Override
 	public boolean select(HttpServletRequest request, String username) {
 		// 创建数据库连接
 		DBAccess db = new DBAccess();
@@ -193,7 +189,6 @@ public class AddressBean implements AddressDAO{
 	 * @param username
 	 * @return
 	 */
-	@Override
 	public boolean update(HttpServletRequest request, String username) {
 		// 创建数据库连接
 		DBAccess db = new DBAccess();

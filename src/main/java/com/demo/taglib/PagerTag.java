@@ -1,7 +1,7 @@
 package com.demo.taglib;
 
-import java.io.IOException;
 import javax.servlet.jsp.tagext.TagSupport;
+import java.io.IOException;
 
 public class PagerTag extends TagSupport {
 
@@ -33,7 +33,7 @@ public class PagerTag extends TagSupport {
 		// 输出每页记录数下拉列表
 		buffer
 				.append("\r\n		<select name=\"pageSize\" onchange=\"document.all.pageNo.value='1';document.all.form1.submit();\">");
-		int[] pageSizeIndexs = { 10, 25, 50, 100, 200, 300, 500 };
+		int[] pageSizeIndexs = { 5, 10, 25, 50, 100, 200, 300, 500 };
 		for (int i = 0; i < pageSizeIndexs.length; i++) {
 			int curvalue = pageSizeIndexs[i];
 			// 没有被选中

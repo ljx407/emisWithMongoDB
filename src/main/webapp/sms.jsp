@@ -66,7 +66,7 @@
 					<TD>${hash.message}</TD>
 					<TD>${hash.username}</TD>
 					<TD>${hash.isRead}</TD>
-					<TD><a href='sms.do?method=edit&id=${hash.id}&pageSize=${requestScope.pageSize}&pageNo=${requestScope.pageNo}'>修改</a>
+					<TD><a href='sms.do?method=read&id=${hash.id}&pageSize=${requestScope.pageSize}&pageNo=${requestScope.pageNo}'>已读</a>
 					<a href="sms.do?method=delete&id=${hash.id}&pageSize=${requestScope.pageSize}&pageNo=${requestScope.pageNo}">删除</a></TD>
 				</TR>
 			</c:forEach>

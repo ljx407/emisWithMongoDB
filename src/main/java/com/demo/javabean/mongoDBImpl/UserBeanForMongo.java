@@ -17,18 +17,16 @@ public class UserBeanForMongo implements UserDAO{
 
     private final String USERS_COLLECTION = "users";
 
-    @Override
     public boolean valid(String username, String password) {
-        MongoClient mongoClient = new MongoClient("localhost",27017);
+        MongoClient mongoClient = new MongoClient(EmisConstant.DB_ADDRESS_DEFAULT,EmisConstant.DB_PORT_DEFAULT);
         MongoDatabase mongoDatabase = mongoClient.getDatabase(EmisConstant.DB_DATABASE_EMIS);
         MongoCollection users = mongoDatabase.getCollection(USERS_COLLECTION);
         long count = users.count(and(eq("username",username),eq("password",password)));
         return count > 0 ;
     }
 
-    @Override
     public boolean isExist(String username) {
-        MongoClient mongoClient = new MongoClient("localhost",27017);
+        MongoClient mongoClient = new MongoClient(EmisConstant.DB_ADDRESS_DEFAULT,EmisConstant.DB_PORT_DEFAULT);
         MongoDatabase mongoDatabase = mongoClient.getDatabase(EmisConstant.DB_DATABASE_EMIS);
         MongoCollection<Document> users = mongoDatabase.getCollection(USERS_COLLECTION);
         long count = users.count(eq("username", username));
@@ -36,9 +34,8 @@ public class UserBeanForMongo implements UserDAO{
         return count > 0;
     }
 
-    @Override
     public void add(String username, String password, String email) {
-        MongoClient mongoClient = new MongoClient("localhost", 27017);
+        MongoClient mongoClient = new MongoClient(EmisConstant.DB_ADDRESS_DEFAULT, EmisConstant.DB_PORT_DEFAULT);
         MongoDatabase database = mongoClient.getDatabase(EmisConstant.DB_DATABASE_EMIS);
         MongoCollection<Document> users = database.getCollection(USERS_COLLECTION);
 

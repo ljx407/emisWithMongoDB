@@ -29,7 +29,6 @@ public class AddressBeanForMongo implements AddressDAO {
 
     private final String ADDRESS_COLLECTION = "address";
 
-    @Override
     public boolean list(HttpServletRequest request, String username, String strPageSize, String strPageNo) {
 
         MongoClient mongoClient = new MongoClient(EmisConstant.DB_ADDRESS_DEFAULT, EmisConstant.DB_PORT_DEFAULT);
@@ -72,7 +71,6 @@ public class AddressBeanForMongo implements AddressDAO {
         return false;
     }
 
-    @Override
     public boolean delete(HttpServletRequest request, String username) {
 
         MongoClient mongoClient = new MongoClient(EmisConstant.DB_ADDRESS_DEFAULT, EmisConstant.DB_PORT_DEFAULT);
@@ -85,7 +83,6 @@ public class AddressBeanForMongo implements AddressDAO {
         return deleteResult.getDeletedCount() == 1;
     }
 
-    @Override
     public boolean insert(HttpServletRequest request, String username) {
 
         // 连接数据库
@@ -121,7 +118,6 @@ public class AddressBeanForMongo implements AddressDAO {
         return true;
     }
 
-    @Override
     public boolean select(HttpServletRequest request, String username) {
         // 连接数据库
         MongoClient mongoClient = new MongoClient(EmisConstant.DB_ADDRESS_DEFAULT, EmisConstant.DB_PORT_DEFAULT);
@@ -148,7 +144,6 @@ public class AddressBeanForMongo implements AddressDAO {
         return true;
     }
 
-    @Override
     public boolean update(HttpServletRequest request, String username) {
         // 连接数据库
         MongoClient mongoClinet = new MongoClient(EmisConstant.DB_ADDRESS_DEFAULT,EmisConstant.DB_PORT_DEFAULT);
